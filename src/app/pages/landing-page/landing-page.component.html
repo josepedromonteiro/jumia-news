@@ -1,0 +1,33 @@
+<div class="page-title">
+  Latest News
+</div>
+
+<div class="latest-news content">
+
+  <ngx-masonry class="grid" [options]="gridOptionsMock" [useImagesLoaded]="true" *ngIf="loading">
+    <div ngxMasonryItem class="new skel"
+         *ngFor="let _ of 10 | mockNumber">
+      <app-skeleton count="1" appearance="line" class="skel-image"></app-skeleton>
+      <app-skeleton count="1" appearance="line" class="skel-title"></app-skeleton>
+      <app-skeleton count="3" appearance="line" class="skel-description"></app-skeleton>
+    </div>
+  </ngx-masonry>
+
+  <ngx-masonry class="grid" [options]="gridOptions" [useImagesLoaded]="true" *ngIf="!loading">
+    <div ngxMasonryItem class="new"
+         *ngFor="let jumiaNew of news">
+      <app-new-preview [new]="jumiaNew"></app-new-preview>
+    </div>
+  </ngx-masonry>
+</div>
+
+
+<div class="paginator">
+  <div class="text" (click)="goToLink()">
+    Data provided by <b>The New York Times</b>
+  </div>
+  <mat-paginator [length]="50"
+                 [pageSize]="10"
+                 (page)="onPage($event)">
+  </mat-paginator>
+</div>

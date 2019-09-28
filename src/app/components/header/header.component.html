@@ -1,0 +1,33 @@
+<div class="header">
+  <div class="jumia-logo" [routerLink]="['/']">
+    Jumia News
+  </div>
+  <div class="end">
+    <form [formGroup]="headerForm" class="search-form">
+      <div class="filter">
+        <button mat-icon-button (click)="changeSelect()" type="button">
+          <mat-icon>filter_list</mat-icon>
+        </button>
+        <mat-select formControlName="options" #optionSelect>
+          <mat-optgroup *ngFor="let group of optionsGroup" [label]="group.group">
+            <mat-option *ngFor="let option of group.options" [value]="option.name"
+                        (click)="select(group.group, option.name)">
+              {{option.label}}
+            </mat-option>
+          </mat-optgroup>
+        </mat-select>
+      </div>
+      <div class="input">
+        <input formControlName="search" placeholder="Search">
+      </div>
+      <mat-option *ngFor="let article of articles" [value]="article">
+        {{article}}
+      </mat-option>
+      <div class="search-btn">
+        <button mat-icon-button (click)="search()" type="submit">
+          <mat-icon>search</mat-icon>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

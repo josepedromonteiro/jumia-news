@@ -1,1 +1,136 @@
 /* You can add global styles to this file, and also import other style files */
+
+:root {
+  --background-body: white;
+  --main-text-color: black;
+  --main-text-background-rgb: 255, 255, 255;
+  --main-text-rgb: 0, 0, 0;
+  --main-card-background: #ffffff;
+  --card-preview-size: 300px;
+  --header-height: 70px;
+  --paginator-heigth: 56px;
+  --header-background: rgba(255, 255, 255, 0.93);
+  --header-background-blur: rgba(255, 255, 255, 0.65);
+  --blur-filter: 15px;
+  --card-shadow: 0 5px 70px -30px #a4a4a4;
+  --card-title-background: rgba(255, 255, 255, 0.77);
+  --card-title-background-blur: rgba(255, 255, 255, 0.61);
+  --loader-color: #dcdcdc;
+  --search-input-background: rgba(218, 218, 218, 0.89);
+  --backdrop-background: rgba(21, 21, 21, 0.32);
+}
+
+@import url('https://fonts.googleapis.com/css?family=Barlow:400,700,800,900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap');
+
+html, body {
+  height: 100%;
+}
+
+// If dark mode is setted on the OS
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-body: #000000;
+    --main-text-color: white;
+    --main-text-background-rgb: 0, 0, 0;
+    --main-text-rgb: 255, 255, 255;
+    --main-card-background: #242424;
+    --header-background: rgba(0, 0, 0, 0.93);
+    --header-background-blur: rgba(0, 0, 0, 0.65);
+    --blur-filter: 15px;
+    --card-shadow: none;
+    --card-title-background: rgba(27, 27, 27, 0.77);
+    --card-title-background-blur: rgba(27, 27, 27, 0.61);
+    --loader-color: #323232;
+    --search-input-background: rgba(45, 45, 45, 0.89);
+    --backdrop-background: rgba(21, 21, 21, 0.86);
+  }
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Barlow', sans-serif;
+  color: var(--main-text-color);
+  background-color: var(--background-body);
+}
+
+.page-title {
+  display: flex;
+  font-weight: 800;
+  font-size: 3.2rem;
+  margin-left: 4%;
+  margin-top: var(--header-height);
+
+  .next-title {
+    opacity: 0.4;
+    margin-left: 20px;
+  }
+}
+
+.content {
+  padding-bottom: var(--paginator-heigth);
+  width: 90%;
+  margin: auto;
+}
+
+
+.mat-form-field-empty.mat-form-field-label {
+  color: black;
+}
+
+.mat-form-field-underline {
+  background-color: black !important;
+}
+
+[class^="mat-"]:not(.mat-icon) {
+  font-family: 'Barlow', sans-serif !important;
+}
+
+input {
+  width: 100% !important;
+  border: none !important;
+  height: 100% !important;
+  background: transparent !important;
+  font-family: 'Barlow', sans-serif !important;
+  font-size: 1.2rem !important;
+  color: var(--main-text-color);
+}
+
+input:focus {
+  outline-offset: 0px !important;
+}
+
+*:focus {
+  outline: none !important;
+}
+
+::placeholder {
+  color: var(--main-text-color);
+  opacity: 0.5;
+}
+
+.cdk-overlay-container {
+  //@supports (backdrop-filter: blur(5px)) or (-webkit-backdrop-filter: blur(5px)) {
+  //  & {
+  //    backdrop-filter: blur(5px);
+  //  }
+  //}
+
+  //filter: blur(15px);
+}
+
+.mat-bottom-sheet-container {
+  font: 300 20px Roboto, "Helvetica Neue", sans-serif;
+  max-width: 750px !important;
+  background: var(--main-card-background)!important;
+  color: var(--main-text-color);
+  border-radius: 0!important;
+  max-height: 90vh!important;
+}
+
+
+
+.cdk-overlay-dark-backdrop {
+  background-color: var(--backdrop-background);
+}

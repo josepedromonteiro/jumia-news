@@ -1,0 +1,29 @@
+<div class="page-title">
+  Search
+  <div class="next-title">
+    {{searchTerm}}
+  </div>
+</div>
+<div class="search content">
+  <div class="not-found" *ngIf="notFound">
+    <lottie-animation-view
+      [options]="lottieConfigNotFound"
+      height="500">
+    </lottie-animation-view>
+    Sorry We couldn't find any result for your search
+  </div>
+
+  <div class="loading" *ngIf="loading">
+    <lottie-animation-view
+      [options]="lottieConfigLoading"
+      height="500">
+    </lottie-animation-view>
+    We are looking for the best news of course...
+  </div>
+
+  <div class="news-list">
+    <div class="new-item" *ngFor="let searchNew of searchNews">
+      <app-new-search-preview [new]="searchNew"></app-new-search-preview>
+    </div>
+  </div>
+</div>

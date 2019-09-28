@@ -1,0 +1,36 @@
+app-search-page {
+
+  .not-found, .loading {
+    font-size: 3rem;
+    width: 70%;
+    margin: auto;
+    text-align: center;
+  }
+
+  .news-list {
+    .new-item {
+      margin: 40px;
+      animation: enter-new 1.2s ease-in-out forwards;
+      opacity: 0;
+    }
+  }
+
+  @keyframes enter-new {
+    0% {
+      opacity: 0;
+      transform: translateY(50px) scale(0.8);
+    }
+
+    100% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+  }
+
+  // Animate each new, we can set 10 because only 10 news are loaded from the API
+  @for $i from 0 through 9 {
+    .new-item:nth-child(#{$i}n) {
+      animation-delay: #{$i * 0.1}s;
+    }
+  }
+}

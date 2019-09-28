@@ -1,0 +1,72 @@
+app-landing-page {
+
+  .skel {
+    .skel-image {
+      .loader {
+        height: 80px;
+      }
+    }
+
+    .skel-text {
+
+      .loader {
+        height: 20px;
+      }
+    }
+
+    .skel-description {
+      .loader {
+        height: 10px;
+      }
+    }
+  }
+
+
+  .latest-news {
+
+    .grid {
+      margin: auto;
+      justify-content: center;
+
+      .new {
+        width: var(--card-preview-size);
+        margin: 30px;
+      }
+    }
+  }
+
+  .paginator {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: var(--header-background);
+
+
+    // Prevent iphone/android notch
+    padding-bottom: env(safe-area-inset-bottom);
+
+    .text {
+      margin-left: 20px;
+      cursor: pointer;
+    }
+
+    @supports (backdrop-filter: blur(15px)) or (-webkit-backdrop-filter: blur(15px)) {
+      & {
+        background: var(--header-background-blur);
+        backdrop-filter: blur(15px);
+      }
+
+      & .search .input {
+        background: rgba(218, 218, 218, 0.57) !important;
+      }
+    }
+
+    .mat-paginator {
+      background: transparent !important;
+      color: var(--main-text-color);
+      margin: auto 20px auto auto;
+    }
+  }
+}

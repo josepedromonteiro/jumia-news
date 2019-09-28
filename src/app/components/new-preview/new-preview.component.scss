@@ -1,0 +1,70 @@
+.preview-card {
+
+  background: var(--main-card-background);
+  box-shadow: var(--card-shadow);
+  width: 100%;
+
+  .only-title {
+    background: var(--card-title-background);
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: 10px;
+
+    @supports (backdrop-filter: blur(10px)) or (--webkit-backdrop-filter: blur(10px)) {
+      & {
+        background: var(--card-title-background-blur);
+        backdrop-filter: blur(10px);
+      }
+    }
+  }
+
+  .header {
+    height: 30%;
+    max-height: 300px;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+
+    .image {
+      height: 100%;
+      width: 100%;
+      min-height: 60px;
+
+      img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    .title {
+      position: absolute;
+      font-weight: bold;
+      font-size: 1.2rem;
+      background: var(--card-title-background);
+      padding: 10px;
+      bottom: 0;
+      width: calc(100% - 20px);
+
+
+      @supports (backdrop-filter: blur(10px)) or (--webkit-backdrop-filter: blur(10px)) {
+        & {
+          background: var(--card-title-background-blur);
+          backdrop-filter: blur(10px);
+        }
+      }
+    }
+
+    .full {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      height: 50px;
+    }
+  }
+
+  .content {
+    height: 70%;
+    padding: 16px;
+  }
+}

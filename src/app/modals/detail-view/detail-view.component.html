@@ -1,0 +1,33 @@
+<div class="detail-view" *ngIf="activeNew">
+  <div class="header-tools">
+    <button mat-icon-button (click)="dismiss()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+  <div class="header">
+    <div class="image" *ngIf="image">
+      <img [src]="image"/>
+    </div>
+    <div class="text" [ngClass]="!image ? 'full-title': ''">
+      <div class="title">
+        {{activeNew.headLine}}
+      </div>
+      <div class="content-text">
+        {{activeNew.main_text}}
+      </div>
+    </div>
+  </div>
+
+  <div class="detail-view-content">
+    <div class="main-text">
+      {{activeNew.abstract}}
+    </div>
+    <div class="author">
+      {{activeNew.byline}}
+    </div>
+  </div>
+
+  <div class="footer">
+    <button mat-stroked-button class="keep-reading-btn" (click)="goToLink()">Keep Reading</button>
+  </div>
+</div>

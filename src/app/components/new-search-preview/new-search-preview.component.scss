@@ -1,0 +1,29 @@
+app-new-search-preview {
+  .search-result {
+    width: 90%;
+    max-width: 700px;
+    background: var(--main-card-background);
+    box-shadow: var(--card-shadow);
+    margin: auto;
+    padding: 20px;
+
+    .title {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .text {
+      font-size: 1rem;
+      margin-top: 10px;
+    }
+
+    .author {
+      font-size: 0.8rem;
+      background-color: rgba(205, 205, 205, 0.20);
+      border-radius: 10px;
+      padding: 5px 16px;
+      margin: 20px 10px auto auto;
+      width: fit-content;
+    }
+  }
+}

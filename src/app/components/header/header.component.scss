@@ -1,0 +1,94 @@
+app-header {
+
+  .header {
+    // Prevent iphone/android notch
+    padding-top: env(safe-area-inset-top);
+
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: var(--header-height);
+    z-index: 999;
+
+    background: var(--header-background);
+
+    display: flex;
+    align-items: center;
+
+    @supports (backdrop-filter: blur(15px)) or (-webkit-backdrop-filter: blur(15px)) {
+      & {
+        background: var(--header-background-blur);
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+      }
+      & .search .input {
+        background: var(--search-input-background) !important;
+      }
+    }
+
+
+    .jumia-logo {
+      font-family: 'Playfair Display', serif;
+      font-weight: bold;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      font-size: 1.2rem;
+      cursor: pointer;
+      margin-left: 4%;
+    }
+
+    .search, .settings {
+      align-self: flex-end;
+    }
+
+    .search-form {
+      display: flex;
+    }
+
+    .end {
+      display: flex;
+      margin: auto 30px auto auto;
+
+      .input {
+        max-width: 300px;
+        background: var(--search-input-background);
+        padding: 5px 16px;
+        border-radius: 20px;
+        font-size: 01.2rem !important;
+      }
+    }
+
+    .mat-form-field-wrapper {
+      padding-bottom: 0 !important;
+    }
+
+    .form-field {
+      width: 100%;
+    }
+  }
+
+  .filter {
+    height: 40px;
+    text-align: center;
+
+    .mat-select-trigger {
+      opacity: 0;
+      width: 80px;
+    }
+  }
+}
+
+.mat-select-panel {
+  background: var(--main-card-background) !important;
+
+  .mat-optgroup-label {
+    opacity: 0.8;
+  }
+
+  .mat-optgroup-label, .mat-option-text {
+    color: var(--main-text-color) !important;
+  }
+}
+

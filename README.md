@@ -1,27 +1,31 @@
-# JumiaNews
+# Jumia New :newspaper:
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
+Jumia News is a simple web app that lets you find the latest news and also search for them.
 
-## Development server
+## Installation :wrench:
+Run the npm install
+```bash
+npm i
+```
+Build and serve the application
+```bash
+ng serve
+```
+After that click on the link shown in the terminal.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Optional - Run PWA
+```bash
+npm run pwa:test
+```
+Access the link in your device and save it in the home screen
 
-## Code scaffolding
+## Cool tips :information_desk_person:
+* The app supports dark mode, based on your browser/OS theme;
+* You can run the app as a PWA;
+* In Safari, Chrome, and Edge you can see some really nice blurred effects.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+## TODO :bow:
+There's some parts missing...
+* Functional Test;
+* Unit Tests;
+* Put the filters to work.

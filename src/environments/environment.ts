@@ -6,6 +6,29 @@ export const environment = {
   production: false
 };
 
+export const keys = {
+  nytimesKey: 'IvhQAFMzllOVhuieLKqSJUUAFwGKCUPZ'
+};
+
+export const api = {
+  nytimesBaseUrl: 'https://api.nytimes.com',
+  nytimesNewswire: {
+    endpoint: '/svc/news/v3/content',
+    all: '/all/all.json',
+  },
+  nytimesSearch: {
+    endpoint: '/svc/search/v2',
+    articleSearch: '/articlesearch.json',
+    filter: 'fq=',
+    sort: 'sort=',
+    page: 'page=',
+    search: 'q='
+  },
+  nytimesResources: {
+    baseUrl: 'https://www.nytimes.com/'
+  }
+};
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.
