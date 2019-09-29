@@ -7,10 +7,15 @@ import {SwUpdate} from '@angular/service-worker';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor(updates: SwUpdate) {
-    updates.available.subscribe(event => {
+  constructor(private swUpdate: SwUpdate) {
+    if (this.swUpdate.isEnabled) {
 
-      updates.activateUpdate().then(() => document.location.reload());
-    });
+      this.swUpdate.available.subscribe(() => {
+
+        if (confirm('New version available. Load New Version?')) {
+          window.location.reload();
+        }
+      });
+    }
   }
 }
